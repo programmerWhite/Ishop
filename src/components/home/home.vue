@@ -34,11 +34,12 @@
         columns: [
           {field: 'name', title: '姓名', width: 80, titleAlign: 'center',columnAlign:'center',orderBy:'',isResize:true,isEdit:true,headIsEdit:false},
           {field: 'tel', title: '手机号码', width: 150, titleAlign: 'center',columnAlign:'center',orderBy:'',isResize:true,isEdit:true,headIsEdit:true},
-          {field: 'hobby', title: '爱好', width: 150, titleAlign: 'center',columnAlign:'center',isResize:true,isEdit:true,headIsEdit:true},
-          {field: 'address', title: '地址',width: 280, titleAlign: 'center',columnAlign:'left',isResize:true,isEdit:true,headIsEdit:true},
+          {field: 'hobby', title: '爱好', width: 150, titleAlign: 'center',columnAlign:'center',isResize:true,isEdit:false,headIsEdit:true},
           {field: 'select', title: '地址',width: 280, titleAlign: 'center',columnAlign:'left',isResize:true,headIsEdit:true,
             componentName:"table-operation"
-          }
+          },
+          {field: 'address', title: '地址',width: 280, titleAlign: 'center',columnAlign:'left',isResize:true,isEdit:true,headIsEdit:true},
+
         ],
         oldTableData:null,
         sortObj:{"name":"","tel":""},
@@ -141,7 +142,8 @@
               var self = this;
               setTimeout(function () {
                 self.tableData = self.cloneData(tempTableData);
-              });
+              },0);
+
               return false;
             }
           }
