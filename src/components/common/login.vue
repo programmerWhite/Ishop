@@ -2,7 +2,6 @@
   <div class="main-content">
     <img src="../../assert/img/login/login_icon.jpg" />
     <div class="content">
-      <form @submit.prevent="submit">
         <label class="head block">管家婆手机版</label>
         <label class="login block">LOGIN</label>
         <input id="username" name="username" type="text" placeholder="用户名" v-model="inputObj.username" />
@@ -14,16 +13,16 @@
           </label>
           <label class="forget-pwd">忘记密码？</label>
         </div>
-        <input class="btn-login" type="submit" value="登录" />
+        <input class="btn-login" type="button" value="登录" @click="loginSystem" />
         <div>
           <label class="remark">如果您还没有账号，请点击此处<a>注册试用</a></label>
         </div>
-      </form>
     </div>
   </div>
 </template>
 
 <script>
+
     export default {
         name: "login",
       data(){
@@ -33,6 +32,13 @@
               pwd:""
             }
           }
+      },
+      methods:{
+        loginSystem:function () {
+          this.$router.push({
+            name:"home"
+          });
+        }
       }
     }
 </script>

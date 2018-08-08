@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home/home'
 
+const home = resolve => {
+  require.ensure(['@/components/home/home'], () => {
+    resolve(require('@/components/home/home'), 'home');
+  });
+};
 
 const login = resolve => {
   require.ensure(['@/components/common/login'], () => {
@@ -14,14 +18,16 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: home
     },
     {
-      path:'/login',
+      path:'/',
       name:'login',
       component:login
     }
   ]
-})
+});
+
+
