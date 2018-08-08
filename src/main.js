@@ -17,6 +17,14 @@ Vue.component(VPagination.name, VPagination);
 /*导入 全局jquery*/
 import $ from "jquery";
 
+/*
+引入 bootStrap 包，
+注意：引入 bootstrap 需要引入 jquery
+*/
+import "./assert/css/bootstrap.css"
+import "./assert/css/font-awesome.min.css"
+import "./assert/css/ace.min.css"
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
